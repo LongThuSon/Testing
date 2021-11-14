@@ -31,46 +31,36 @@ function testCoffee() {
             quantity: 0    
         }
     ];
-    
-    var T = 50;
 
     this.res = function(a, b) {
+        var T = 50;
+        var excessCash;
+        
         switch (a) {
             case 1:
-                if (listCoffee[0].quantity === 0 || b > (T / listCoffee[0].cost) || listCoffee[0].cost > T) {
-                    return T;
-                } else {
-                    return (T - b * listCoffee[0].cost);
-                }
+                if (listCoffee[0].quantity === 0 || b > (T / listCoffee[0].cost) || listCoffee[0].cost > T) excessCash = T;
+                else excessCash = T - b * listCoffee[0].cost;
+                break;
             case 2:
-                if (listCoffee[1].quantity === 0 || b > (T / listCoffee[1].cost) || listCoffee[1].cost > T) {
-                    return T;
-                } else {
-                    return (T - b * listCoffee[1].cost);
-                }
+                if (listCoffee[1].quantity === 0 || b > (T / listCoffee[1].cost) || listCoffee[1].cost > T) excessCash = T;
+                else excessCash = T - b * listCoffee[1].cost;
+                break;
             case 3:
-                if (listCoffee[2].quantity === 0 || b > (T / listCoffee[2].cost) || listCoffee[2].cost > T) {
-                    return T;
-                } else {
-                    return (T - b * listCoffee[2].cost);
-                }
+                if (listCoffee[2].quantity === 0 || b > (T / listCoffee[2].cost) || listCoffee[2].cost > T) excessCash = T;
+                else excessCash = T - b * listCoffee[2].cost;
+                break;
             case 4:
-                if (listCoffee[3].quantity === 0 || b > (T / listCoffee[3].cost) || listCoffee[3].cost > T) {
-                    return T;
-                } else {
-                    return (T - b * listCoffee[3].cost);
-                }
+                if (listCoffee[3].quantity === 0 || b > (T / listCoffee[3].cost) || listCoffee[3].cost > T) excessCash = T;
+                else excessCash = T - b * listCoffee[3].cost;
+                break;
             case 5:
-                if (listCoffee[4].quantity === 0 || b > (T / listCoffee[4].cost) || listCoffee[4].cost > T) {
-                    return T;
-                } else {
-                    return (T - b * listCoffee[4].cost);
-                }
+                if (listCoffee[4].quantity === 0 || b > (T / listCoffee[4].cost) || listCoffee[4].cost > T) excessCash = T;
+                else excessCash = T - b * listCoffee[4].cost;
+                break;
             default:
-                return T;
+                excessCash = T;
         }
-
-        
+        return excessCash;
     };
   
 }
