@@ -38,23 +38,28 @@ function testCoffee() {
         
         switch (a) {
             case 1:
-                if (listCoffee[0].quantity === 0 || b > (T / listCoffee[0].cost) || listCoffee[0].cost > T) excessCash = T;
+                if (listCoffee[0].quantity === 0 || b > (T / listCoffee[0].cost) || listCoffee[0].cost > T) 
+                    excessCash = T;
                 else excessCash = T - b * listCoffee[0].cost;
                 break;
             case 2:
-                if (listCoffee[1].quantity === 0 || b > (T / listCoffee[1].cost) || listCoffee[1].cost > T) excessCash = T;
+                if (listCoffee[1].quantity === 0 || b > (T / listCoffee[1].cost) || listCoffee[1].cost > T) 
+                    excessCash = T;   
                 else excessCash = T - b * listCoffee[1].cost;
                 break;
-            case 3:
-                if (listCoffee[2].quantity === 0 || b > (T / listCoffee[2].cost) || listCoffee[2].cost > T) excessCash = T;
+            case 3:  
+                if (listCoffee[2].quantity === 0 || b > (T / listCoffee[2].cost) || listCoffee[2].cost > T) 
+                    excessCash = T;
                 else excessCash = T - b * listCoffee[2].cost;
                 break;
             case 4:
-                if (listCoffee[3].quantity === 0 || b > (T / listCoffee[3].cost) || listCoffee[3].cost > T) excessCash = T;
+                if (listCoffee[3].quantity === 0 || b > (T / listCoffee[3].cost) || listCoffee[3].cost > T) 
+                    excessCash = T;
                 else excessCash = T - b * listCoffee[3].cost;
-                break;
+                break; 
             case 5:
-                if (listCoffee[4].quantity === 0 || b > (T / listCoffee[4].cost) || listCoffee[4].cost > T) excessCash = T;
+                if (listCoffee[4].quantity === 0 || b > (T / listCoffee[4].cost) || listCoffee[4].cost > T) 
+                    excessCash = T;
                 else excessCash = T - b * listCoffee[4].cost;
                 break;
             default:
@@ -62,7 +67,6 @@ function testCoffee() {
         }
         return excessCash;
     };
-  
 }
 
 describe('Coffee', function() {
@@ -120,4 +124,45 @@ describe('Coffee', function() {
         expect(50).toBe(cal.res(6, 3));
     });
     
+});
+
+describe('Coffee: White box', function() {
+    var cal = new testCoffee();
+    
+    it('(1, 7) -> 50', function() {
+      expect(50).toBe(cal.res(1, 7));
+    });
+
+    it('(1, 2) -> 30', function() {
+        expect(30).toBe(cal.res(1, 2));
+    });
+    
+    it('(2, 9) -> 50', function() {
+        expect(50).toBe(cal.res(2, 9));
+    });
+
+    it('(2, 4) -> 10', function() {
+        expect(10).toBe(cal.res(2, 4));
+    });
+
+    it('(3, 6) -> 50', function() {
+        expect(50).toBe(cal.res(3, 6));
+    });
+
+    it('(3, 1) -> 40', function() {
+        expect(40).toBe(cal.res(3, 1));
+    });
+
+    it('(4, 2) -> 50', function() {
+        expect(50).toBe(cal.res(4, 2));
+    });
+
+    it('(5, 3) -> 50', function() {
+        expect(50).toBe(cal.res(5, 3));
+    });
+
+    it('(6, 4) -> 50', function() {
+        expect(50).toBe(cal.res(6, 4));
+    });
+ 
 });
